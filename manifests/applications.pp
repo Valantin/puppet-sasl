@@ -4,8 +4,16 @@
 #
 # @param applications
 #   Hash that contain the application configuration
+#
 # @example
-#   include sasl::applications
+#   class { 'sasl::applications':
+#     applications => {
+#       slapd => {
+#         mech_list => ['gssapi', 'plain', 'external'],
+#         pwcheck_method: 'saslauthd',
+#       },
+#     },
+#   }
 class sasl::applications (
   Hash $applications = {},
 ) {

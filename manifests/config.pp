@@ -2,8 +2,32 @@
 #
 # A description of what this defined type does
 #
+# @param mechanism
+#   Backend for saslauth service
+#   Default 'ldap'
+#
+# @param mech_options
+#   Additionaly -O option to sasl2-bin
+#
+# @param threads
+#   Number of process running
+#   Default 5
+#
+# @param options
+#   Other extra options to pass to sasl2-bin
+#   Default ['-c']
+#
+# @param socket
+#   Socket path used by daemon
+#
+# @param config
+#   Config file to store env used by daemon
+#
 # @example
-#   sasl::config { 'namevar': }
+#   sasl::config { 'saslauthd':
+#     socket => '/var/run/saslauthd',
+#     config => '/etc/default/saslauthd',
+#   }
 define sasl::config (
   Sasl::Mechanism $mechanism = 'ldap',
   String $mech_options = '', #lint:ignore:params_empty_string_assignment

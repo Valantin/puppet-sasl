@@ -130,7 +130,10 @@
 #   Location of the srvtab file
 #
 # @example
-#   sasl::application { 'namevar': }
+#   sasl::application { 'slapd':
+#     mech_list => ['gssapi', 'plain', 'external'],
+#     pwcheck_method: 'saslauthd',
+#   }
 define sasl::application (
   Stdlib::Absolutepath $application_file = "/usr/lib/sasl2/${name}.conf",
   Enum['auxprop','saslauthd','pwcheck','authdaemond','alwaystrue'] $pwcheck_method = 'auxprop',
