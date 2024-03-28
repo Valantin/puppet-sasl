@@ -12,8 +12,8 @@ describe 'sasl::applications' do
       let(:params) do
         {
           applications: {
-            'slapd': {
-              mech_list: ['gssapi', 'plain', 'external'],
+            slapd: {
+              mech_list: %w[gssapi plain external],
               pwcheck_method: 'saslauthd',
             },
           },

@@ -17,11 +17,11 @@ class sasl::service (
   String $service = 'saslauthd',
   String $package = 'sasl2-bin',
   Sasl::Mechanism $mechanism = 'ldap',
-  String $mech_options = '',
+  String $mech_options = '', #lint:ignore:params_empty_string_assignment
   Integer $threads = 5,
   Array[String] $options = ['-c'],
-  Stdlib::Absolutepath $socket,
-  Stdlib::Absolutepath $config,
+  Stdlib::Absolutepath $socket = undef,
+  Stdlib::Absolutepath $config = undef,
 ) {
   package { $package:
     ensure => present,

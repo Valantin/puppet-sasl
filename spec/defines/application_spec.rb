@@ -9,7 +9,7 @@ describe 'sasl::application' do
   end
   let(:params) do
     {
-      mech_list: ['gssapi','plain','external'],
+      mech_list: %w[gssapi plain external],
       pwcheck_method: 'saslauthd',
     }
   end

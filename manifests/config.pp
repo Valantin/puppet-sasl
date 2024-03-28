@@ -6,7 +6,7 @@
 #   sasl::config { 'namevar': }
 define sasl::config (
   Sasl::Mechanism $mechanism = 'ldap',
-  String $mech_options = '',
+  String $mech_options = '', #lint:ignore:params_empty_string_assignment
   Integer $threads = 5,
   Stdlib::Absolutepath $socket = undef,
   Array[String] $options = ['-c'],

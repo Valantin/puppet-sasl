@@ -133,13 +133,13 @@
 #   sasl::application { 'namevar': }
 define sasl::application (
   Stdlib::Absolutepath $application_file = "/usr/lib/sasl2/${name}.conf",
+  Enum['auxprop','saslauthd','pwcheck','authdaemond','alwaystrue'] $pwcheck_method = 'auxprop',
   Optional[Stdlib::Absolutepath] $authdaemon_path = undef,
   Optional[Enum['yes','noplain','no']] $auto_transition = undef,
   Optional[String] $canon_user_plugin = undef,
   Optional[Integer] $log_level = undef,
   Optional[Array[String]] $mech_list = undef,
   Optional[Stdlib::Absolutepath] $plugin_list = undef,
-  Enum['auxprop','saslauthd','pwcheck','authdaemond','alwaystrue'] $pwcheck_method = 'auxprop',
   Optional[Stdlib::Absolutepath] $saslauthd_path = undef,
   Optional[Array[Variant[Enum['gssapi','ldapdb','otp','sasldb','sql','srp','kerberosv4'],String]]] $auxprop_plugin = undef,
   #gssapi

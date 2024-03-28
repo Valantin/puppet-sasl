@@ -9,7 +9,7 @@ describe 'sasl::configs' do
       let(:params) do
         {
           config: {
-            '/etc/defaults/saslauthd':{
+            '/etc/defaults/saslauthd': {
               socket: '/var/run/saslauthd'
             }
           }
