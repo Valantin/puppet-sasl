@@ -1,0 +1,2 @@
+sasl::service::config: /etc/sysconfig/saslauthd
+sasl::service::socket: /run/saslauthd
